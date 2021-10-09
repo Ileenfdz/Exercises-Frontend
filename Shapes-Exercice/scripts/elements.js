@@ -1,0 +1,1 @@
+export const shapesList = document.getElementsByClassName('shape');
