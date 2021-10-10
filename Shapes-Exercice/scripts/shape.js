@@ -1,10 +1,11 @@
-import { shapesList } from "./elements.js";
+import { btnReset, shapesList } from "./elements.js";
 
 export class Shape {
 
     constructor() 
     {
-
+        this.hideShape();
+        this.showShapes();
     }
 
     hideShape()
@@ -16,6 +17,17 @@ export class Shape {
                 shape.hidden = true;
             })
         }
+    }
+
+    showShapes()
+    {
+        let shapes = Array.from(shapesList);
+
+        btnReset.addEventListener('click', () => {
+            shapes.forEach(shape => {
+                shape.hidden = false;
+            });
+        }) 
     }
 
 }
